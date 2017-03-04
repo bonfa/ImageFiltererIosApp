@@ -15,11 +15,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private var isShowingOriginalImage: Bool = true
     
     @IBOutlet var originalImageView: UITouchableImageView!
+    @IBOutlet var filteredImageView: UITouchableImageView!
+    @IBOutlet var filterButton: UIButton!
+    @IBOutlet var compareButton: UIButton!
+    @IBOutlet var originalLabel: UILabel!
     @IBOutlet var secondaryMenu: UIView!
     @IBOutlet var bottomMenu: UIView!
-    @IBOutlet var filterButton: UIButton!
-    @IBOutlet weak var compareButton: UIButton!
-    @IBOutlet var originalLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         isShowingOriginalImage = true
         compareButton.enabled = false
         originalImageView.setTouchDelegate(self)
+        filteredImageView.hidden = true //TODO
     }
 
     // MARK: Share
@@ -185,13 +187,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func showFilteredImage() {
-        originalImageView.image = filteredImage
+        filteredImageView.image = filteredImage
+        filteredImageView.hidden = false
         originalLabel.hidden = true
     }
     
     func showOriginalImage() {
-        originalImageView.image = originalImage
         originalLabel.hidden = false
+        filteredImageView.hidden = true
     }
 }
 
