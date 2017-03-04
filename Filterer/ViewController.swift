@@ -30,7 +30,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         isShowingOriginalImage = true
         compareButton.enabled = false
         originalImageView.setTouchDelegate(self)
-        filteredImageView.hidden = true //TODO
+        self.filteredImageView.alpha = 0.0
     }
 
     // MARK: Share
@@ -188,13 +188,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func showFilteredImage() {
         filteredImageView.image = filteredImage
-        filteredImageView.hidden = false
-        originalLabel.hidden = true
+        UIView.animateWithDuration(0.4, animations: {
+            self.filteredImageView.alpha = 1.0
+        })
     }
     
     func showOriginalImage() {
-        originalLabel.hidden = false
-        filteredImageView.hidden = true
+        UIView.animateWithDuration(0.4, animations: {
+            self.filteredImageView.alpha = 0.0
+        })
     }
 }
 
