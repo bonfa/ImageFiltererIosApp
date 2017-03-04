@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPg-yq-mNp">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="Qiv-OS-HEF"/>
                                                 </constraints>
@@ -37,7 +37,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6B-1F-j0K">
-                                                <rect key="frame" x="150" y="0.0" width="150" height="44"/>
+                                                <rect key="frame" x="120" y="0.0" width="120" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="9TF-bC-3of"/>
                                                 </constraints>
@@ -46,8 +46,15 @@
                                                     <action selector="onFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bde-Ke-RWf"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdx-qY-2m2" userLabel="Filter Intensity Button">
+                                                <rect key="frame" x="240" y="0.0" width="120" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="T8H-tm-Agd"/>
+                                                </constraints>
+                                                <state key="normal" title="Edit"/>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-2N-f93">
-                                                <rect key="frame" x="300" y="0.0" width="150" height="44"/>
+                                                <rect key="frame" x="360" y="0.0" width="120" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="zgf-3k-aR7"/>
                                                 </constraints>
@@ -57,7 +64,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Leg-ry-Zqw">
-                                                <rect key="frame" x="450" y="0.0" width="150" height="44"/>
+                                                <rect key="frame" x="480" y="0.0" width="120" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="IZl-Nh-MXv"/>
                                                 </constraints>
@@ -67,9 +74,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="tPg-2N-f93" firstAttribute="leading" secondItem="C6B-1F-j0K" secondAttribute="trailing" id="VlX-0B-tzF"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
