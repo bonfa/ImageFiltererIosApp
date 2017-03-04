@@ -110,7 +110,7 @@
                         <outlet property="compareButton" destination="tPg-2N-f93" id="UNh-fi-d4g"/>
                         <outlet property="filterButton" destination="C6B-1F-j0K" id="6Kf-1q-zun"/>
                         <outlet property="imageView" destination="aND-Em-4Dd" id="Tie-p8-1MU"/>
-                        <outlet property="originalLabel" destination="csL-ps-a1J" id="PHt-cZ-ifZ"/>
+                        <outlet property="originalLabel" destination="csL-ps-a1J" id="UZr-1j-Rgg"/>
                         <outlet property="secondaryMenu" destination="ePS-oG-ZHP" id="Be7-JW-Iwe"/>
                     </connections>
                 </viewController>
