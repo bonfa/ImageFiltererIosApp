@@ -73,12 +73,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Filterer/ViewController.swift"
-            timestampString = "510332572.073306"
+            timestampString = "510334295.305236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "hideSecondaryMenu()"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "filterImage(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -137,12 +137,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Filterer/ViewController.swift"
-            timestampString = "510332689.51345"
+            timestampString = "510334295.305236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "showFilteredImage()"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "showOriginalImage()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -153,13 +153,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Filterer/ViewController.swift"
-            timestampString = "510332689.51345"
+            timestampString = "510334295.305236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "onEditFilterSelected(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

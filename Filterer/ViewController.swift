@@ -40,12 +40,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // MARK: Share
     @IBAction func onShare(sender: AnyObject) {
+        unselectButton(filterButton)
+        hideSecondaryMenu()
+        unselectButton(filterIntensityButton)
+        hideFilterIntensitySlider()
         let activityController = UIActivityViewController(activityItems: ["Check out our really cool app", originalImageView.image!], applicationActivities: nil)
         presentViewController(activityController, animated: true, completion: nil)
     }
     
     // MARK: New Photo
     @IBAction func onNewPhoto(sender: AnyObject) {
+        unselectButton(filterButton)
+        hideSecondaryMenu()
+        unselectButton(filterIntensityButton)
+        hideFilterIntensitySlider()
         let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .ActionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { action in
@@ -92,6 +100,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: Filter Menu
     @IBAction func onFilter(sender: UIButton) {
+        hideFilterIntensitySlider()
+        unselectButton(filterIntensityButton)
         if (sender.selected) {
             hideSecondaryMenu()
             sender.selected = false
@@ -210,7 +220,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func onEditFilterSelected(sender: UIButton) {
-        filterButton.selected = false
+        unselectButton(filterButton)
         if (sender.selected) {
             hideFilterIntensitySlider()
             sender.selected = false
@@ -244,6 +254,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.filterIntensityView.alpha = 0.0
         }
     }
+    
+    func selectButton(button:UIButton) {
+        button.selected = true
+    }
+    
+    func unselectButton(button:UIButton) {
+        button.selected = false
+    }
+
     
 }
 
