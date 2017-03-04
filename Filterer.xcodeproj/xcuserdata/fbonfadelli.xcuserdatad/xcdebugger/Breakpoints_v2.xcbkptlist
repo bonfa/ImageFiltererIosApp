@@ -73,11 +73,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Filterer/ViewController.swift"
-            timestampString = "510324756.375531"
+            timestampString = "510332572.073306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "hideSecondaryMenu()"
             landmarkType = "5">
          </BreakpointContent>
@@ -137,11 +137,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Filterer/ViewController.swift"
-            timestampString = "510325035.141325"
+            timestampString = "510332689.51345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "showFilteredImage()"
             landmarkType = "5">
          </BreakpointContent>
@@ -153,13 +153,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Filterer/ViewController.swift"
-            timestampString = "510325035.141325"
+            timestampString = "510332689.51345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
-            landmarkName = "showOriginalImage()"
-            landmarkType = "5">
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

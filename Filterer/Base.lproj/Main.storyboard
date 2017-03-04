@@ -52,6 +52,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="T8H-tm-Agd"/>
                                                 </constraints>
                                                 <state key="normal" title="Edit"/>
+                                                <connections>
+                                                    <action selector="onEditFilterSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K6s-4V-fDl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-2N-f93">
                                                 <rect key="frame" x="360" y="0.0" width="120" height="44"/>
@@ -121,6 +124,8 @@
                         <outlet property="bottomMenu" destination="JNF-wb-wwY" id="jTm-2q-PDu"/>
                         <outlet property="compareButton" destination="tPg-2N-f93" id="UNh-fi-d4g"/>
                         <outlet property="filterButton" destination="C6B-1F-j0K" id="6Kf-1q-zun"/>
+                        <outlet property="filterIntensityButton" destination="Zdx-qY-2m2" id="2Lc-uY-FlU"/>
+                        <outlet property="filterIntensityView" destination="Y9D-ea-15W" id="eCj-nb-Crz"/>
                         <outlet property="filteredImageView" destination="eUe-Zk-bcZ" id="7lN-Gr-563"/>
                         <outlet property="originalImageView" destination="aND-Em-4Dd" id="BOH-LC-XXU"/>
                         <outlet property="originalLabel" destination="csL-ps-a1J" id="UZr-1j-Rgg"/>
@@ -128,6 +133,25 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Y9D-ea-15W" userLabel="Filter Intensity View">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bqx-yj-ovo">
+                            <rect key="frame" x="-2" y="0.0" width="244" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="1kR-3O-BoX"/>
+                            </constraints>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Bqx-yj-ovo" secondAttribute="trailing" id="Oj1-8R-w1p"/>
+                        <constraint firstAttribute="bottom" secondItem="Bqx-yj-ovo" secondAttribute="bottom" id="eig-wd-gQv"/>
+                        <constraint firstItem="Bqx-yj-ovo" firstAttribute="leading" secondItem="Y9D-ea-15W" secondAttribute="leading" id="gBn-0K-4gw"/>
+                        <constraint firstItem="Bqx-yj-ovo" firstAttribute="top" secondItem="Y9D-ea-15W" secondAttribute="top" id="liU-1o-6e5"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" id="ePS-oG-ZHP">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

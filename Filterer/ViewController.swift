@@ -19,16 +19,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var filterButton: UIButton!
     @IBOutlet var compareButton: UIButton!
     @IBOutlet var originalLabel: UILabel!
-    @IBOutlet var secondaryMenu: UIView!
+    @IBOutlet weak var secondaryMenu: UIView!
     @IBOutlet var bottomMenu: UIView!
+    @IBOutlet var filterIntensityView: UIView!
+    @IBOutlet var filterIntensityButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         originalImage = UIImage(named: "scenery")
         secondaryMenu.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         secondaryMenu.translatesAutoresizingMaskIntoConstraints = false
+        filterIntensityView.translatesAutoresizingMaskIntoConstraints = false
         isShowingOriginalImage = true
         compareButton.enabled = false
+        filterIntensityButton.enabled = false
         originalImageView.setTouchDelegate(self)
         self.filteredImageView.alpha = 0.0
     }
@@ -102,10 +107,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let bottomConstraint = secondaryMenu.bottomAnchor.constraintEqualToAnchor(bottomMenu.topAnchor)
         let leftConstraint = secondaryMenu.leftAnchor.constraintEqualToAnchor(view.leftAnchor)
         let rightConstraint = secondaryMenu.rightAnchor.constraintEqualToAnchor(view.rightAnchor)
-        
         let heightConstraint = secondaryMenu.heightAnchor.constraintEqualToConstant(44)
+        let secondaryMenuContraints : [NSLayoutConstraint] = [bottomConstraint, leftConstraint, rightConstraint, heightConstraint]
         
-        NSLayoutConstraint.activateConstraints([bottomConstraint, leftConstraint, rightConstraint, heightConstraint])
+        NSLayoutConstraint.activateConstraints(secondaryMenuContraints)
         
         view.layoutIfNeeded()
         
@@ -139,6 +144,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func compareSelected(sender: AnyObject) {
+        //TODO use selected propery instead of boolean
         if isShowingOriginalImage {
             showFilteredImage()
         }
@@ -151,26 +157,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func onEnhanceRed(sender: AnyObject) {
         let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 50, greenValue: 0, blueValue: 0)
         filterImage(enhanceReduceFilter)
+        filterIntensityButton.enabled = true
     }
     
     @IBAction func onEnhanceGreen(sender: AnyObject) {
         let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 0, greenValue: 50, blueValue: 0)
         filterImage(enhanceReduceFilter)
+        filterIntensityButton.enabled = true
     }
     
     @IBAction func onEnhanceBlue(sender: AnyObject) {
         let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 0, greenValue: 0, blueValue: 50)
         filterImage(enhanceReduceFilter)
+        filterIntensityButton.enabled = true
     }
     
     @IBAction func onBlur(sender: AnyObject) {
         let meanFilter : MeanFilter = MeanFilter(size: 5);
         filterImage(meanFilter)
+        filterIntensityButton.enabled = true
     }
     
     @IBAction func onSwitchChannelValues(sender: AnyObject) {
         let switchChannelFilter : SwitchChannelValuesFilter = SwitchChannelValuesFilter(mode: SwitchChannelValuesFilter.MODE.RED_TO_GREEN__GREEN_TO_BLUE__BLUE_TO_RED);
         filterImage(switchChannelFilter)
+        filterIntensityButton.enabled = false
     }
     
     func onTouchesBegan() {
@@ -197,5 +208,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.filteredImageView.alpha = 0.0
         })
     }
+    
+    @IBAction func onEditFilterSelected(sender: UIButton) {
+        filterButton.selected = false
+        if (sender.selected) {
+            hideFilterIntensitySlider()
+            sender.selected = false
+        }
+        else {
+            showFilterIntensitySlider()
+            sender.selected = true
+        }
+    }
+    
+    func showFilterIntensitySlider() {
+        hideSecondaryMenu()
+        view.addSubview(filterIntensityView)
+        
+        let bottomConstraint = filterIntensityView.bottomAnchor.constraintEqualToAnchor(bottomMenu.topAnchor)
+        let leftConstraint = filterIntensityView.leftAnchor.constraintEqualToAnchor(view.leftAnchor)
+        let rightConstraint = filterIntensityView.rightAnchor.constraintEqualToAnchor(view.rightAnchor)
+
+        NSLayoutConstraint.activateConstraints([rightConstraint, bottomConstraint, leftConstraint])
+        
+        view.layoutIfNeeded()
+        
+        self.filterIntensityView.alpha = 0
+        UIView.animateWithDuration(0.4) {
+            self.filterIntensityView.alpha = 1.0
+        }
+    }
+    
+    func hideFilterIntensitySlider() {
+        UIView.animateWithDuration(0.4) {
+            self.filterIntensityView.alpha = 0.0
+        }
+    }
+    
 }
 
