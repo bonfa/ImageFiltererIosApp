@@ -56,7 +56,6 @@
 			children = (
 				4DC199961BB201E100AA75E7 /* Filterer */,
 				4DC199951BB201E100AA75E7 /* Products */,
-				61B9E4AE1E6877DC0043A3FA /* filters */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,16 +70,25 @@
 		4DC199961BB201E100AA75E7 /* Filterer */ = {
 			isa = PBXGroup;
 			children = (
-				4DC199971BB201E100AA75E7 /* AppDelegate.swift */,
-				4DC199991BB201E100AA75E7 /* ViewController.swift */,
-				4DC199A91BB2049F00AA75E7 /* RGBAImage.swift */,
+				6180F9D21E6ACCBB00CDB235 /* Source */,
 				4DC1999B1BB201E100AA75E7 /* Main.storyboard */,
 				4DC1999E1BB201E100AA75E7 /* Assets.xcassets */,
 				4DC199A01BB201E100AA75E7 /* LaunchScreen.storyboard */,
 				4DC199A31BB201E100AA75E7 /* Info.plist */,
-				6180F9D01E69B2CE00CDB235 /* UITouchableImageView.swift */,
 			);
 			path = Filterer;
+			sourceTree = "<group>";
+		};
+		6180F9D21E6ACCBB00CDB235 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				61B9E4AE1E6877DC0043A3FA /* filters */,
+				4DC199971BB201E100AA75E7 /* AppDelegate.swift */,
+				4DC199991BB201E100AA75E7 /* ViewController.swift */,
+				4DC199A91BB2049F00AA75E7 /* RGBAImage.swift */,
+				6180F9D01E69B2CE00CDB235 /* UITouchableImageView.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 		61B9E4AE1E6877DC0043A3FA /* filters */ = {
@@ -93,8 +101,7 @@
 				61B9E4B31E6877DC0043A3FA /* SinglePixelFilter.swift */,
 				61B9E4B41E6877DC0043A3FA /* SwitchChannelValuesFilter.swift */,
 			);
-			name = filters;
-			path = Filterer/filters;
+			path = filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
