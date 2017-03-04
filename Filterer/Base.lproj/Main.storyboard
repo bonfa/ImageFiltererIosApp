@@ -125,6 +125,7 @@
                         <outlet property="compareButton" destination="tPg-2N-f93" id="UNh-fi-d4g"/>
                         <outlet property="filterButton" destination="C6B-1F-j0K" id="6Kf-1q-zun"/>
                         <outlet property="filterIntensityButton" destination="Zdx-qY-2m2" id="2Lc-uY-FlU"/>
+                        <outlet property="filterIntensitySlider" destination="Bqx-yj-ovo" id="LVN-qE-DTn"/>
                         <outlet property="filterIntensityView" destination="Y9D-ea-15W" id="eCj-nb-Crz"/>
                         <outlet property="filteredImageView" destination="eUe-Zk-bcZ" id="7lN-Gr-563"/>
                         <outlet property="originalImageView" destination="aND-Em-4Dd" id="BOH-LC-XXU"/>
@@ -142,6 +143,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="1kR-3O-BoX"/>
                             </constraints>
+                            <connections>
+                                <action selector="onSliderValueChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJk-lF-08f"/>
+                            </connections>
                         </slider>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

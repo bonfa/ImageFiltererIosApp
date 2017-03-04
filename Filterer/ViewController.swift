@@ -8,25 +8,34 @@
 
 import UIKit
 
+public enum FilterSelection {
+    case EnhanceRed, EnhanceGreen, EnhanceBlue, Blur, SwitchChannel
+}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TouchDelegate {
 
     private var filteredImage: UIImage?
     private var originalImage: UIImage?
     private var isShowingOriginalImage: Bool = true
+    private var selectedFilter : FilterSelection?
     
     @IBOutlet var originalImageView: UITouchableImageView!
     @IBOutlet var filteredImageView: UITouchableImageView!
     @IBOutlet var filterButton: UIButton!
     @IBOutlet var compareButton: UIButton!
     @IBOutlet var originalLabel: UILabel!
-    @IBOutlet weak var secondaryMenu: UIView!
+    @IBOutlet var secondaryMenu: UIView!
     @IBOutlet var bottomMenu: UIView!
     @IBOutlet var filterIntensityView: UIView!
     @IBOutlet var filterIntensityButton: UIButton!
+    @IBOutlet var filterIntensitySlider: UISlider!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filterIntensitySlider.minimumValue = 0
+        filterIntensitySlider.maximumValue = 1
+        
         originalImage = UIImage(named: "scenery")
         secondaryMenu.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         secondaryMenu.translatesAutoresizingMaskIntoConstraints = false
@@ -164,30 +173,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func onEnhanceRed(sender: AnyObject) {
+        selectedFilter = FilterSelection.EnhanceRed
         let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 50, greenValue: 0, blueValue: 0)
         filterImage(enhanceReduceFilter)
         filterIntensityButton.enabled = true
     }
     
     @IBAction func onEnhanceGreen(sender: AnyObject) {
+        selectedFilter = FilterSelection.EnhanceGreen
         let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 0, greenValue: 50, blueValue: 0)
         filterImage(enhanceReduceFilter)
         filterIntensityButton.enabled = true
     }
     
     @IBAction func onEnhanceBlue(sender: AnyObject) {
+        selectedFilter = FilterSelection.EnhanceBlue
         let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 0, greenValue: 0, blueValue: 50)
         filterImage(enhanceReduceFilter)
         filterIntensityButton.enabled = true
     }
     
     @IBAction func onBlur(sender: AnyObject) {
-        let meanFilter : MeanFilter = MeanFilter(size: 5);
+        selectedFilter = FilterSelection.Blur
+        let meanFilter : MeanFilter = MeanFilter(size: 7);
         filterImage(meanFilter)
         filterIntensityButton.enabled = true
     }
     
     @IBAction func onSwitchChannelValues(sender: AnyObject) {
+        selectedFilter = FilterSelection.SwitchChannel
         let switchChannelFilter : SwitchChannelValuesFilter = SwitchChannelValuesFilter(mode: SwitchChannelValuesFilter.MODE.RED_TO_GREEN__GREEN_TO_BLUE__BLUE_TO_RED);
         filterImage(switchChannelFilter)
         filterIntensityButton.enabled = false
@@ -231,6 +245,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func showFilterIntensitySlider() {
+        filterIntensitySlider.value = 0.5
         hideSecondaryMenu()
         view.addSubview(filterIntensityView)
         
@@ -262,6 +277,37 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         button.selected = false
     }
 
+    @IBAction func onSliderValueChanged(sender: UISlider) {
+        let sliderValue = sender.value
+        let filter = getProperFilter(sliderValue);
+        if (filter != nil) {
+            filterImage(filter!)
+        }
+    }
     
+    func getProperFilter(sliderValue : Float) -> ImageFilter? {
+        switch(selectedFilter!) {
+        case FilterSelection.EnhanceRed:
+            return EnhanceReduceFilter(redValue: getIntensityValueforEnhancereduceFilter(sliderValue), greenValue: 0, blueValue: 0)
+        case FilterSelection.EnhanceGreen:
+            return EnhanceReduceFilter(redValue: 0 , greenValue: getIntensityValueforEnhancereduceFilter(sliderValue), blueValue: 0)
+        case FilterSelection.EnhanceBlue:
+            return EnhanceReduceFilter(redValue: 0 , greenValue: 0, blueValue: getIntensityValueforEnhancereduceFilter(sliderValue))
+        case FilterSelection.Blur:
+            return MeanFilter(size: getIntensityValueforMeanFilter(sliderValue))
+        default:
+            return nil
+        }
+    }
+    
+    func getIntensityValueforEnhancereduceFilter(sliderFilterValue : Float) -> Int8 {
+        return (Int8) (100.0 * sliderFilterValue)
+    }
+    
+    func getIntensityValueforMeanFilter(sliderFilterValue : Float) -> Int {
+        let availableValues: [Int] = [3, 5, 7, 9, 11, 13]
+        let index = Int(round(5 * sliderFilterValue))
+        return availableValues[index]
+    }
 }
 
