@@ -14,7 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private var originalImage: UIImage?
     private var isShowingOriginalImage: Bool = true
     
-    @IBOutlet var imageView: UITouchableImageView!
+    @IBOutlet var originalImageView: UITouchableImageView!
     @IBOutlet var secondaryMenu: UIView!
     @IBOutlet var bottomMenu: UIView!
     @IBOutlet var filterButton: UIButton!
@@ -28,12 +28,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         secondaryMenu.translatesAutoresizingMaskIntoConstraints = false
         isShowingOriginalImage = true
         compareButton.enabled = false
-        imageView.setTouchDelegate(self)
+        originalImageView.setTouchDelegate(self)
     }
 
     // MARK: Share
     @IBAction func onShare(sender: AnyObject) {
-        let activityController = UIActivityViewController(activityItems: ["Check out our really cool app", imageView.image!], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: ["Check out our really cool app", originalImageView.image!], applicationActivities: nil)
         presentViewController(activityController, animated: true, completion: nil)
     }
     
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         dismissViewControllerAnimated(true, completion: nil)
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.image = image
+            originalImageView.image = image
             originalImage = image
         }
     }
@@ -185,12 +185,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func showFilteredImage() {
-        imageView.image = filteredImage
+        originalImageView.image = filteredImage
         originalLabel.hidden = true
     }
     
     func showOriginalImage() {
-        imageView.image = originalImage
+        originalImageView.image = originalImage
         originalLabel.hidden = false
     }
 }
