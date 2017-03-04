@@ -131,38 +131,44 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n3M-NR-6VP">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drk-Kp-614">
+                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drk-Kp-614">
                                     <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
-                                    <state key="normal" title="Filter 1"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <state key="normal" title="Red" image="icon_red"/>
                                     <connections>
                                         <action selector="compareSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ONu-S9-sGc"/>
                                         <action selector="onEnhanceRed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g91-Aj-mD4"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axt-GK-a6m">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axt-GK-a6m">
                                     <rect key="frame" x="48" y="0.0" width="48" height="128"/>
-                                    <state key="normal" title="Filter 2"/>
+                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <state key="normal" title="Green" image="icon_green"/>
                                     <connections>
                                         <action selector="onEnhanceGreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w3A-Ac-zYz"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNq-be-bSy">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNq-be-bSy">
                                     <rect key="frame" x="96" y="0.0" width="48" height="128"/>
-                                    <state key="normal" title="Filter 3"/>
+                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <state key="normal" title="Blue" image="icon_blue"/>
                                     <connections>
                                         <action selector="onEnhanceBlue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QwZ-ES-gMO"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUq-ef-bpc">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUq-ef-bpc">
                                     <rect key="frame" x="144" y="0.0" width="48" height="128"/>
-                                    <state key="normal" title="Filter 4"/>
+                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <state key="normal" title="Smooth" image="icon_smooth"/>
                                     <connections>
                                         <action selector="onBlur:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSl-oF-wS7"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7P8-VM-YCw">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7P8-VM-YCw">
                                     <rect key="frame" x="192" y="0.0" width="48" height="128"/>
-                                    <state key="normal" title="Filter 5"/>
+                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <state key="normal" title="Channel Switch" image="icon_channel_switch"/>
                                     <connections>
                                         <action selector="onSwitchChannelValues:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nlx-lH-Rei"/>
                                     </connections>
@@ -183,6 +189,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_blue" width="326" height="245"/>
+        <image name="icon_channel_switch" width="326" height="245"/>
+        <image name="icon_green" width="326" height="245"/>
+        <image name="icon_red" width="326" height="245"/>
+        <image name="icon_smooth" width="326" height="245"/>
         <image name="scenery" width="100" height="134"/>
     </resources>
 </document>
