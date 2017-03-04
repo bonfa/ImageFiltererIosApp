@@ -136,35 +136,35 @@
                                     <state key="normal" title="Filter 1"/>
                                     <connections>
                                         <action selector="compareSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ONu-S9-sGc"/>
-                                        <action selector="filter1Selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPv-NK-onk"/>
+                                        <action selector="onEnhanceRed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g91-Aj-mD4"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axt-GK-a6m">
                                     <rect key="frame" x="48" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Filter 2"/>
                                     <connections>
-                                        <action selector="filter2Selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wfn-bA-KcL"/>
+                                        <action selector="onEnhanceGreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w3A-Ac-zYz"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNq-be-bSy">
                                     <rect key="frame" x="96" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Filter 3"/>
                                     <connections>
-                                        <action selector="filter3Selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cKR-NH-n4Z"/>
+                                        <action selector="onEnhanceBlue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QwZ-ES-gMO"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUq-ef-bpc">
                                     <rect key="frame" x="144" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Filter 4"/>
                                     <connections>
-                                        <action selector="filter4Selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WaS-u4-NGu"/>
+                                        <action selector="onBlur:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSl-oF-wS7"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7P8-VM-YCw">
                                     <rect key="frame" x="192" y="0.0" width="48" height="128"/>
                                     <state key="normal" title="Filter 5"/>
                                     <connections>
-                                        <action selector="filter5Selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EhI-wJ-2WY"/>
+                                        <action selector="onSwitchChannelValues:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nlx-lH-Rei"/>
                                     </connections>
                                 </button>
                             </subviews>

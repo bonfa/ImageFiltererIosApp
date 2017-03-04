@@ -125,11 +125,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    @IBAction func filter1Selected(sender: AnyObject) {
-        let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 50, greenValue: 0, blueValue: 0)
-        filterImage(enhanceReduceFilter)
-    }
-    
     func filterImage(imageFilter: ImageFilter) {
         if (originalImage != nil) {
             enableCompareButton()
@@ -153,25 +148,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         isShowingOriginalImage = !isShowingOriginalImage
     }
     
-    @IBAction func filter2Selected(sender: AnyObject) {
+    @IBAction func onEnhanceRed(sender: AnyObject) {
+        let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 50, greenValue: 0, blueValue: 0)
+        filterImage(enhanceReduceFilter)
+    }
+    
+    @IBAction func onEnhanceGreen(sender: AnyObject) {
+        let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 0, greenValue: 50, blueValue: 0)
+        filterImage(enhanceReduceFilter)
+    }
+    
+    @IBAction func onEnhanceBlue(sender: AnyObject) {
+        let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 0, greenValue: 0, blueValue: 50)
+        filterImage(enhanceReduceFilter)
+    }
+    
+    @IBAction func onBlur(sender: AnyObject) {
         let meanFilter : MeanFilter = MeanFilter(size: 5);
         filterImage(meanFilter)
     }
     
-    
-    @IBAction func filter3Selected(sender: AnyObject) {
-        let meanFilter : SwitchChannelValuesFilter = SwitchChannelValuesFilter(mode: SwitchChannelValuesFilter.MODE.RED_TO_GREEN__GREEN_TO_BLUE__BLUE_TO_RED);
-        filterImage(meanFilter)
-    }
-    
-    @IBAction func filter4Selected(sender: AnyObject) {
-                let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 0, greenValue: 50, blueValue: 0)
-                filterImage(enhanceReduceFilter)
-    }
-    
-    @IBAction func filter5Selected(sender: AnyObject) {
-        let enhanceReduceFilter:EnhanceReduceFilter = EnhanceReduceFilter(redValue: 0, greenValue: 0, blueValue: 50)
-        filterImage(enhanceReduceFilter)
+    @IBAction func onSwitchChannelValues(sender: AnyObject) {
+        let switchChannelFilter : SwitchChannelValuesFilter = SwitchChannelValuesFilter(mode: SwitchChannelValuesFilter.MODE.RED_TO_GREEN__GREEN_TO_BLUE__BLUE_TO_RED);
+        filterImage(switchChannelFilter)
     }
     
     func onTouchesBegan() {
