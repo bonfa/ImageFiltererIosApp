@@ -154,7 +154,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func compareSelected(sender: AnyObject) {
-        //TODO use selected propery instead of boolean
         if isShowingOriginalImage {
             showFilteredImage()
         }
